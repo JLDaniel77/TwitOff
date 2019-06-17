@@ -14,6 +14,7 @@ jinja2 = "*"
 psycopg2 = "*"
 basilica = "*"
 tweepy = "*"
+scikit-learn = "*"
 
 [requires]
 python_version = "3.6"
