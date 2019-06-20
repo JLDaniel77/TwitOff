@@ -5,7 +5,6 @@ verify_ssl = true
 
 [dev-packages]
 python-dotenv = "*"
-python-decouple = "*"
 
 [packages]
 flask = "*"
@@ -16,6 +15,7 @@ basilica = "*"
 tweepy = "*"
 scikit-learn = "*"
 gunicorn = "*"
+python-decouple = "*"
 
 [requires]
 python_version = "3.6"
