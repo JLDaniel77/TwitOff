@@ -14,7 +14,7 @@ BASILICA = basilica.Connection(config('BASILICA_KEY'))
 
 
 def add_or_update_user(username):
-    """Add or update a user *and* their Tweets, error if no/private user."""
+    """Add or update a user and their Tweets, error if no/private user."""
     try:
         twitter_user = TWITTER.get_user(username)
         db_user = (User.query.get(twitter_user.id) or
@@ -38,3 +38,9 @@ def add_or_update_user(username):
         raise e
     else:
         DB.session.commit()
+
+
+def update_all_users():
+    """Update all Tweets for all Users in the User table."""
+    for user in User.query.all():
+        add_or_update_user(user.name)
